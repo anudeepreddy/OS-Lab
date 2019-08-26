@@ -1,1 +1,2 @@
--init: npm i -g http-server
+tasks:
+ -init: npm i -g http-server
