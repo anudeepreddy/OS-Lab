@@ -27,13 +27,10 @@ int main(){
     int isdone[np],flag=0;
     memset(isdone,0,sizeof(isdone));
     for(int _=0;_<np;_++){
-        //cout<<"yes1\n";
         for(int i=0;i<np;i++){
-            //cout<<"yes2\n";
             flag=0;
             if(isdone[i])   continue;
             for(int j=0;j<nr;j++){
-                //cout<<"yes3\n";
                 if(need[i][j]>available[j]){
                     flag=1;
                     break;
@@ -42,16 +39,13 @@ int main(){
             if(flag){
                 continue;
             }
-            //cout<<"no\n";
             safesequence.push_back(i);
             isdone[i]=1;
             for(int j=0;j<nr;j++){
-                //cout<<"yes4\n";
                 available[j]+=alloc[i][j];
             }
         }
     }
-    //cout<<safesequence.size();
     for(int i=0;i<safesequence.size();i++){
         cout<<safesequence[i]<<" ";
     }
